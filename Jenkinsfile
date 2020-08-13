@@ -36,7 +36,7 @@ node{
          sh "gcloud config set compute/region us-central1"
          sh "gcloud container clusters get-credentials cluster-1 --zone us-central1-c --project mssdevops-284216"
 	 sh "sudo snap install helm --classic"
-         sh "kubectl create serviceaccount --namespace kube-system tiller"
+        // sh "kubectl create serviceaccount --namespace kube-system tiller"
          sh "kubectl create clusterrolebinding tiller-cluster-rule --clusterrole=cluster-admin --serviceaccount=kube-system:tiller"
          sh "kubectl patch deploy --namespace kube-system tiller-deploy -p '{"spec":{"template":{"spec":{"serviceAccount":"tiller"}}}}'"
          sh "helm init --service-account tiller --upgrade"
