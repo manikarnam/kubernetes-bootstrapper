@@ -36,12 +36,12 @@ node{
          sh "gcloud config set compute/region us-central1"
          sh "gcloud container clusters get-credentials cluster-1 --zone us-central1-c --project mssdevops-284216"
         // sh "sed -i -e 's,image_to_be_deployed,'maniengg/spring-boot-mongo:${BUILD_ID}',g' springBootMongo.yml"
-         sh "kubectl apply -f /monitoring/namespace.yml"
-         sh "kubectl apply -f /helm/role-binding.yml"    
-         sh "kubectl apply -f /helm/service-account.yml"
-         sh "kubectl apply -f /prometheus/values.yml"
-         sh "kubectl apply -f /monitoring/grafana/config.yml"
-         sh "kubectl apply -f /monitoring/grafana/values.yml"
+         sh "kubectl apply -f monitoring/namespace.yml"
+         sh "kubectl apply -f helm/role-binding.yml"    
+         sh "kubectl apply -f helm/service-account.yml"
+         sh "kubectl apply -f prometheus/values.yml"
+         sh "kubectl apply -f monitoring/grafana/config.yml"
+         sh "kubectl apply -f monitoring/grafana/values.yml"
          
         }
       }
